@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClipboardModule } from 'ngx-clipboard';
 import { SharedModule } from '../shared/shared.module';
 import { WalletRoutingModule } from './wallet-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { WalletComponent } from './wallet.component';
 import { MenuComponent } from './menu/menu.component';
@@ -15,6 +16,9 @@ import { HistoryComponent } from './history/history.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { ConnectionProgressComponent } from './tumblebit/connection-progress/connection-progress.component';
+import { AdvancedComponent } from './advanced/advanced.component';
+import { AdvancedService } from '../wallet/advanced/advanced.service';
+import { FeedbackComponent } from './advanced/feedback/feedback.component';
 
 @NgModule({
   imports: [
@@ -24,7 +28,8 @@ import { ConnectionProgressComponent } from './tumblebit/connection-progress/con
     SharedModule.forRoot(),
     NgbModule,
     ReactiveFormsModule,
-    WalletRoutingModule
+    WalletRoutingModule,
+    HttpClientModule,
   ],
   declarations: [
     WalletComponent,
@@ -35,7 +40,12 @@ import { ConnectionProgressComponent } from './tumblebit/connection-progress/con
     HistoryComponent,
     SidebarComponent,
     StatusBarComponent,
-    ConnectionProgressComponent
+    ConnectionProgressComponent,
+    AdvancedComponent,
+    FeedbackComponent
+  ],
+  providers: [
+    AdvancedService
   ],
   exports: []
 })
