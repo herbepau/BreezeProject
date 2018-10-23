@@ -11,8 +11,10 @@ code {
   padding: $code-padding-y $code-padding-x;
   font-size: $code-font-size;
   color: $code-color;
+  font-weight: 400;
   background-color: $code-bg;
   @include border-radius($border-radius);
+  user-select: all !important;
 
   // Streamline the style when inside anchors to avoid broken underline and more
   a > & {
